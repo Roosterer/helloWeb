@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <!--设置上下文的名字，可在servlet中获取，this.getServletContext().getServletContextName();-->
+    <display-name>helloWeb</display-name>
+
+    <!--定义应用内的初始化key value-->
+    <context-param>
+        <param-name>sex</param-name>
+        <param-value>男</param-value>
+    </context-param>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>高阔</param-value>
+    </context-param>
+
+
+    <servlet>
+        <servlet-name>WebXmlElementTest</servlet-name>
+        <servlet-class>servlet.WebXmlElementTest</servlet-class>
+        <!--定义应用内的初始化key value-->
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>24</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WebXmlElementTest</servlet-name>
+        <url-pattern>/test.do</url-pattern>
+    </servlet-mapping>
+    
+    <!--生命周期，init()一次，doGet(),doPost()调用多次，destroy()关闭服务时调用一次-->
+    <servlet>
+        <servlet-name>LifeCircle</servlet-name>
+        <servlet-class>servlet.LifeCircle</servlet-class>
+        <!--容器初始化即加载此servlet的init()-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LifeCircle</servlet-name>
+        <url-pattern>/life.do</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--默认主页servlet-->
+    <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>servlet.Index</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/index.do</url-pattern>
+    </servlet-mapping>
+
+    <!--监听器-->
+    <listener>
+        <listener-class>listener.MyContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.MySessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.MyRequestListener</listener-class>
+    </listener>
+
+
+    
+
+
+</web-app>
+        

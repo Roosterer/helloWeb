@@ -22,8 +22,14 @@ git地址：https://github.com/Roosterer/helloWeb.git
 
 #### 我的测试
 
--
+- 应用参数和初始化参数传入和获取，容器启动即加载实例。
 
+- servlet生命周期，参考：http://www.runoob.com/servlet/servlet-life-cycle.html
 
+- 监听器，过滤器，拦截器区别及使用场景，参考：http://blog.csdn.net/Jintao_Ma/article/details/52972482
+
+把整个项目的流程比作一条河，那么监听器的作用就是能够听到河流里的所有声音，过滤器就是能够过滤出其中的鱼，而拦截器则是拦截其中的部分鱼，并且作标记。所以当需要监听到项目中的一些信息，并且不需要对流程做更改时，用监听器；当需要过滤掉其中的部分信息，只留一部分时，就用过滤器；当需要对其流程进行更改，做相关的记录时用拦截器。
+
+- 监听器：listene域对象中属性的变更的事件监听器就是用来监听 ServletContext, HttpSession, HttpServletRequest 这三个对象中的属性变更信息事件的监听器。这三个监听器接口分别是ServletContextAttributeListener, HttpSessionAttributeListener 和ServletRequestAttributeListener，这三个接口中都定义了三个方法来处理被监听对象中的属性的增加，删除和替换的事件，同一个事件在这三个接口中对应的方法名称完全相同，只是接受的参数类型不同。
 
 

@@ -1,5 +1,5 @@
 <html>
 
-<h2>hello web app...</h2>
+<h2>this is hello.jsp</h2>
 
 </html>

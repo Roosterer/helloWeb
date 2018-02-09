@@ -4,6 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -21,6 +22,9 @@ public class Index extends HttpServlet {
         this.getServletContext().setAttribute("p1","add pppp");
         this.getServletContext().removeAttribute("p1");
 
+        HttpSession session = request.getSession();
+        session.setAttribute("mySession","this is a session");
+        session.removeAttribute("mySession");
 
         request.getRequestDispatcher("index.html").forward(request,response);
     }

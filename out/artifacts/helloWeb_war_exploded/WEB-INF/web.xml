@@ -17,7 +17,6 @@
         <param-value>高阔</param-value>
     </context-param>
 
-
     <servlet>
         <servlet-name>WebXmlElementTest</servlet-name>
         <servlet-class>servlet.WebXmlElementTest</servlet-class>
@@ -67,8 +66,18 @@
     </listener>
 
 
-    
-
+    <!--过滤器-->
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>filter.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <!--<dispatcher>FORWARD</dispatcher> 如果是过滤所有请求，内部跳转不用加，否则内部定向容易死循环-->
+        <!--<servlet-name>Index</servlet-name> 可以过滤Index servlet mapping下的地址-->
+    </filter-mapping>
 
 </web-app>
         
